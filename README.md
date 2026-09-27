@@ -2,7 +2,7 @@
 
 Build a dark-themed security operations dashboard called "AI Sandbox Containment System," matching the visual style of the attached reference image: dark navy/almost-black background, rounded cards with soft borders and subtle shadows, a vibrant green accent color for positive/active states and highlights, a left sidebar for navigation, and clean modern sans-serif typography.
 
-*Left Sidebar*
+## Left Sidebar
 
 - Top: shield/lock icon + "Containment System" title
 
@@ -84,3 +84,21 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Run the Full Stack
+
+Install the Python API dependencies from the repository root and start Flask:
+
+```sh
+python -m pip install -r requirements.txt
+python app.py
+```
+
+In a second terminal, start the dashboard from `UserInterface`:
+
+```sh
+npm install
+npm run dev
+```
+
+The dashboard connects to `http://127.0.0.1:5000` by default. Set `VITE_API_BASE` in a `.env` file when the API runs at a different address. The backend also requires a running Ollama service with the `llama3.2` model available locally.
